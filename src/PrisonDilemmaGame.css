@@ -1,0 +1,137 @@
+/* PrisonDilemmaGame.css */
+
+.game-container {
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        "title"
+        "pop-up"
+        "points"
+        "buttons"
+        "user-choice"
+        "prompt";
+    gap: 10px;
+    margin: 20px;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.title-container {
+    grid-area: title;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up-container {
+    grid-area: pop-up;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px;
+    height: 30vh;
+}
+
+
+.buttons-container {
+    grid-area: buttons;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Maintain Default and Cooperate buttons and make their sizes equal */
+.buttons-container button {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    /* Set a fixed width and height for both buttons */
+}
+/* Add background color for Cooperate button */
+.buttons-container button:nth-child(1) {
+    background-color: #4caf50;
+    /* Green color */
+    color: white;
+}
+
+/* Add background color for Decline button */
+.buttons-container button:nth-child(2) {
+    background-color: #ff5252;
+    /* Red color */
+    color: white;
+}
+.user-choice-container {
+    grid-area: user-choice;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.prompt-container {
+    grid-area: prompt;
+    text-align: center;
+}
+
+.popup {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 999;
+}
+
+/* Maintain wave and thumbs down grid and enlarge it a bit at its position */
+.popup.wave,
+.popup.thumbs-down {
+   
+    padding: 30px;
+    /* Enlarge the pop-up */
+}
+
+.game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Semi-transparent background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.game-over h6 {
+    margin-bottom: 20px;
+}
+
+.play-again-button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.waving-container,
+.thumbs-down-container {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* Add styling for user choice and remaining plays */
+.user-choice-container p,
+.prompt-container p {
+    margin: 10px 0;
+}
